@@ -16,7 +16,7 @@ data/models/*
 
 # Jupyter
 .ipynb_checkpoints
-*.ipynb
+# *.ipynb  – uncomment to ignore all notebooks (we track notebooks/ for Colab)
 
 # IDE
 .vscode/
