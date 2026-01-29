@@ -1,0 +1,22 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Summary: Adversarial Training Effectiveness at Training Epsilons}
+\label{tab:adversarial_effectiveness_summary}
+\begin{tabular}{lcccc}
+\toprule
+Attack & Avg Robustness & Best Improvement & Worst Degradation & Status \\
+\midrule
+A1 & 0.9131 & 0.1719 & 0.0115 & \textcolor{green}{Improves} \\
+A2 & 0.9914 & 0.0090 & 0.0085 & Neutral \\
+A3 & 0.9130 & 0.1710 & 0.0106 & \textcolor{green}{Improves} \\
+A4 & 0.9454 & 0.1001 & 0.0093 & \textcolor{green}{Improves} \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Average robustness and improvement statistics at training epsilons ($\epsilon \in \{0.25, 0.5, 1.0\}$). Robustness is capped at 1.0 for interpretability. Best Improvement = maximum (Adversarial Robustness - Standard Robustness), Worst Degradation = minimum (Adversarial Robustness - Standard Robustness). Status indicates whether adversarial training overall helps (green), degrades (red), or is neutral. Key finding: Adversarial training achieves significant robustness improvements (10-17\%) compared to standard models, particularly for measurement error (A1) and rank manipulation (A3) attacks under larger perturbations ($\epsilon=1.0$), bringing robustness from 0.755-0.849 to 0.927-0.949.}
+\end{minipage}
+\end{table}

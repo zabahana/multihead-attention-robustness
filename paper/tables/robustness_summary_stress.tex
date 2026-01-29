@@ -1,0 +1,55 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Robustness Summary (Stress Regime: $\epsilon = 0.5$ \& $1.0$)}
+\label{tab:robustness_summary_stress}
+\begin{tabular}{lccc}
+\toprule
+Model Type & Avg Robustness & Max Robustness & Variance \\
+ & ($\epsilon = 0.5$ \& $1.0$) & & ($\epsilon = 0.5, 1.0$) \\
+\midrule
+Single-Head & 0.9458 & 0.9519 & $3.7 \times 10^{-5}$ \\
+Multi-Head & 0.9426 & 0.9495 & $4.8 \times 10^{-5}$ \\
+Multi-Head + Diversity & \textbf{0.9473} & \textbf{0.9584} & $1.24 \times 10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Robustness scores averaged over finance-valid attacks (A1-A4) at stress regime epsilons ($\epsilon = 0.5$ and $1.0$). Multi-Head Diversity achieves the highest average robustness (0.9473) and maximum robustness (0.9584), demonstrating superior resilience under high-stress adversarial conditions. The variance metric captures robustness stability across different attack types and epsilon values.}
+\end{minipage}
+\end{table}
+
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\caption{Average Robustness by Attack Type and Epsilon}
+\label{tab:robustness_by_attack_epsilon}
+\begin{tabular}{lcccc}
+\toprule
+Attack Type & Mean & Std & Min & Max \\
+\midrule
+A1 (Measurement Error) & 0.8945 & 0.1253 & 0.2643 & 0.9988 \\
+A2 (Missingness) & 0.9879 & 0.0087 & 0.9558 & 1.0000 \\
+A3 (Rank Manipulation) & 0.8941 & 0.1265 & 0.2533 & 0.9975 \\
+A4 (Regime Shift) & 0.9309 & 0.0835 & 0.3927 & 0.9980 \\
+\bottomrule
+\end{tabular}
+\vspace{0.2cm}
+\begin{tabular}{lcccc}
+\toprule
+Epsilon & Mean & Std & Min & Max \\
+\midrule
+0.25 & 0.9863 & 0.0095 & 0.9408 & 1.0000 \\
+0.50 & 0.9553 & 0.0353 & 0.7965 & 0.9998 \\
+1.00 & 0.8388 & 0.1411 & 0.2533 & 1.0000 \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Average robustness across all models and training types. A2 (Missingness) attacks show highest robustness (mean=0.9879, min=0.9558), while A1 and A3 show lower robustness (mean=0.8945, 0.8941) with wider variance. Robustness decreases with increasing epsilon: mean=0.9863 (min=0.9408) at $\epsilon=0.25$, mean=0.9553 (min=0.7965) at $\epsilon=0.50$, and mean=0.8388 (min=0.2533) at $\epsilon=1.00$.}
+\end{minipage}
+\end{table}

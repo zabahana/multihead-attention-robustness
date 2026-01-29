@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\caption{Adversarial Robustness at Extrapolation Epsilons: Standard vs. Adversarially Trained Models}
+\label{tab:robustness_extrapolation}
+\begin{tabular}{lcccccc}
+\toprule
+Attack & $\epsilon$ & \multicolumn{2}{c}{Standard} & \multicolumn{2}{c}{Best Adversarial} & Improvement \\
+ & & Robustness & $\Delta$RMSE & Robustness & $\Delta$RMSE & \\
+\midrule
+A1 & 2.0 & 0.9093 & 0.001633 & \textcolor{orange}{0.8708} & 0.002121 & \textcolor{red}{-0.0385} \\
+A1 & 3.0 & \textcolor{orange}{0.7938} & 0.003710 & \textcolor{orange}{0.8284} & 0.002817 & \textcolor{green}{0.0346} \\
+A2 & 2.0 & 1.0012 & -0.000022 & 0.9845 & 0.000255 & \textcolor{red}{-0.0167} \\
+A2 & 3.0 & 1.0034 & -0.000061 & 0.9770 & 0.000378 & \textcolor{red}{-0.0264} \\
+A3 & 2.0 & 0.9105 & 0.001610 & \textcolor{orange}{0.8695} & 0.002148 & \textcolor{red}{-0.0410} \\
+A3 & 3.0 & \textcolor{orange}{0.7989} & 0.003619 & \textcolor{orange}{0.8302} & 0.002787 & \textcolor{green}{0.0314} \\
+A4 & 2.0 & 0.9550 & 0.000810 & 0.9152 & 0.001396 & \textcolor{red}{-0.0398} \\
+A4 & 3.0 & 0.9008 & 0.001786 & \textcolor{orange}{0.8716} & 0.002109 & \textcolor{red}{-0.0292} \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Robustness scores at extrapolation epsilon values (2.0, 3.0), beyond training range. 
+Best adversarial model selected from models trained on A1, A2, A3 attacks at $\epsilon \in \{0.25, 0.5, 1.0\}$. 
+Improvement = Adversarial Robustness - Standard Robustness. 
+Red values indicate significant degradation (robustness $< 0.5$ or negative improvement).}
+\end{minipage}
+\end{table}

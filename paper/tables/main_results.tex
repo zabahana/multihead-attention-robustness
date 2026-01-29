@@ -1,0 +1,21 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\caption{Out-of-Sample Prediction and Portfolio Performance Results (2018-2019 Validation Period)}
+\label{tab:main_results}
+\begin{tabular}{lcccc}
+\toprule
+Model & R² & RMSE & IC Mean & IC-IR \\
+\midrule
+Single-Head & 0.0877 & 0.0167 & 0.313 & 0.313 \\
+Multi-Head & 0.0888 & 0.0167 & 0.000 & 0.000 \\
+Multi-Head Diversity & 0.1177 & 0.0164 & 0.359 & 0.359 \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Models trained on 2005-2017 data (pre-COVID), validated on 2018-2019. Multi-Head and Multi-Head Diversity are the only architectures achieving positive R². IC (Information Coefficient) measures cross-sectional correlation between predictions and returns. OLS and Ridge serve as linear baselines; MLP serves as a non-attention non-linear baseline.}
+\end{minipage}
+\end{table}

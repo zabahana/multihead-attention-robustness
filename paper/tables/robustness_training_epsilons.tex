@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.5pt}
+\caption{Adversarial Robustness at Training Epsilons: Standard vs. Adversarially Trained Models}
+\label{tab:robustness_training_epsilons}
+\begin{tabular}{lcccccc}
+\toprule
+Attack & $\epsilon$ & \multicolumn{2}{c}{Standard} & \multicolumn{2}{c}{Best Adversarial} & Improvement \\
+ & & Robustness & $\Delta$RMSE & Robustness & $\Delta$RMSE & \\
+\midrule
+A1 & 0.25 & 0.9837 & 0.000272 & 0.9952 & 0.000079 & \textcolor{green}{0.0115} \\
+A1 & 0.5 & 0.9429 & 0.000956 & 0.9804 & 0.000325 & \textcolor{green}{0.0375} \\
+A1 & 1.0 & 0.7554 & 0.004094 & 0.9273 & 0.001194 & \textcolor{green}{0.1719} \\
+\midrule
+A2 & 0.25 & 0.9915 & 0.000143 & 1.0000 & -0.000030 & \textcolor{green}{0.0085} \\
+A2 & 0.5 & 0.9900 & 0.000167 & 0.9989 & 0.000019 & \textcolor{green}{0.0088} \\
+A2 & 1.0 & 0.9876 & 0.000207 & 0.9967 & 0.000055 & \textcolor{green}{0.0090} \\
+\midrule
+A3 & 0.25 & 0.9894 & 0.000178 & 1.0000 & -0.000018 & \textcolor{green}{0.0106} \\
+A3 & 0.5 & 0.9426 & 0.000960 & 0.9770 & 0.000381 & \textcolor{green}{0.0343} \\
+A3 & 1.0 & 0.7597 & 0.004022 & 0.9307 & 0.001149 & \textcolor{green}{0.1710} \\
+\midrule
+A4 & 0.25 & 0.9889 & 0.000186 & 0.9982 & 0.000030 & \textcolor{green}{0.0093} \\
+A4 & 0.5 & 0.9687 & 0.000525 & 0.9843 & 0.000260 & \textcolor{green}{0.0156} \\
+A4 & 1.0 & 0.8492 & 0.002524 & 0.9493 & 0.000837 & \textcolor{green}{0.1001} \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Robustness scores at training epsilon values (0.25, 0.5, 1.0), computed as $\min(1.0, 1 - \Delta$RMSE$/RMSE_{\text{clean}})$ and capped at 1.0 for interpretability. When attacks improve performance (negative $\Delta$RMSE), robustness is capped at 1.0. Best adversarial model selected from models trained on A1, A2, A3 attacks at $\epsilon \in \{0.25, 0.5, 1.0\}$. Improvement = Adversarial Robustness - Standard Robustness. Positive values (green) indicate improvement, showing that adversarial training achieves substantial robustness improvements (0.0115-0.1719) compared to standard models, particularly at larger perturbations ($\epsilon=1.0$) where improvements reach 10-17\%.}
+\end{minipage}
+\end{table}

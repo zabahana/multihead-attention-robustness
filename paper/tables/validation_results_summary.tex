@@ -1,0 +1,24 @@
+\begin{table}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Validation Results Summary: Out-of-Sample Performance (2018-2019)}
+\label{tab:validation_results}
+\begin{tabular}{lcc}
+\toprule
+Model & RMSE & R² \\
+\midrule
+OLS & 0.017520 & -0.007658 \\
+Ridge & 0.017519 & -0.007585 \\
+MLP & 0.019840 & -0.292290 \\
+Single-Head & 0.016555 & 0.100279 \\
+Multi-Head & 0.016388 & 0.118330 \\
+Multi-Head Diversity & 0.016533 & 0.102619 \\
+\bottomrule
+\end{tabular}
+\vspace{0.1cm}
+\footnotesize
+\begin{minipage}{\columnwidth}
+\textit{Note: Models trained on 2005-2017 data, validated on 2018-2019. Attention-based models (Single-Head, Multi-Head, Multi-Head Diversity) achieve positive R² and lower RMSE compared to linear baselines (OLS, Ridge) and MLP. Multi-Head achieves the highest R² (0.118330) and lowest RMSE (0.016388), demonstrating superior performance. Multi-Head Diversity achieves competitive performance (R²=0.102619, RMSE=0.016533) while providing enhanced robustness through head-diversity regularization.}
+\end{minipage}
+\end{table}
